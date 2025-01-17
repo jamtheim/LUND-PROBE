@@ -5,7 +5,7 @@
 <small>LUND-PROBE is a dataset, comprising clinical MRI- and synthetic CT (sCT) images, targets and OARs delineations, and radiotherapy dose distributions for 432 prostate cancer patients treated with MRI-based radiotherapy. An extended part with 35 patients is also included, with the addition of deep learning (DL)-generated delineations, DL uncertainty maps, and DL structures manually adjusted by four radiation oncologists.</small>
 
 <small>This notebook provides sample code for loading and visualizing the LUND-PROBE data. Follow along and feel free to modify the examples to suit your specific use case! Instructions on how to access the data is found at the AIDA Data Hub:
-https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are found in the file "Data table.pdf". </small>
+https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are found in the file ["Data_table.pdf"](https://github.com/jamtheim/LUND-PROBE/blob/main/Data_table.pdf). </small>
 <small> Publication where the LUND-PROBE dataset data is described is found here http://tocome</small>
 <small> This dataset has also been used in the following publication: https://tobepublished</small>
 
