@@ -1,16 +1,16 @@
 ### LUND-PROBE – LUND Prostate Radiotherapy Open Benchmarking and Evaluation dataset
-#### Tutorial: Visualizing and using the LUND-PROBE dataset</small>
+#### Visualizing and using the LUND-PROBE dataset</small>
 
 <small>Description:</small>
-<small>This tutorial provides sample code for loading and visualizing the LUND-PROBE data. The main objectives are:</small>
-<small>1. To understand the data structure and learn how the data is organized and stored.</small>
-<small>2. To explore visualization techniques and create meaningful plots and charts to gain insights from the data.</small>
-<small>3. To perform data analysis and use key operations to extract valuable information.</small>
+<small>LUND-PROBE is a dataset, comprising clinical MRI- and synthetic CT (sCT) images, targets and OARs delineations, and radiotherapy dose distributions for 432 prostate cancer patients treated with MRI-based radiotherapy. An extended part with 35 patients is also included, with the addition of deep learning (DL)-generated delineations, DL uncertainty maps, and DL structures manually adjusted by four radiation oncologists.</small>
 
-<small>Follow along and feel free to modify the examples to suit your specific use case! Instructions on how to access the data is found at the AIDA Data Hub:
-https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are found in the "Data table.pdf". </small>
+<small>This notebook provides sample code for loading and visualizing the LUND-PROBE data. Follow along and feel free to modify the examples to suit your specific use case! Instructions on how to access the data is found at the AIDA Data Hub:
+https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are found in the file "Data table.pdf". </small>
 <small> Publication where the LUND-PROBE dataset data is described is found here http://tocome</small>
 <small> This dataset has also been used in the following publication: https://tobepublished</small>
+
+
+
 
 ![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_18_0.png)
 
