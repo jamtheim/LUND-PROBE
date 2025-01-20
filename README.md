@@ -1,5 +1,5 @@
 <div style="background-color: white; padding: 10px; border: 1px solid black; text-align: center;">
-    <img src="logo/LUND-Probe_Logo_and_Main_Text_and_Subtext.png" alt="Logo" style="max-width: 50%; height: auto;">
+    <img src="logo/LUND-Probe_Logo_and_Main_Text_and_Subtext_grayMode.png" alt="Logo" style="max-width: 50%; height: auto;">
 </div>
 
 <small>Description:</small>
