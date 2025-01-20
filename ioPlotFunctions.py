@@ -193,7 +193,7 @@ class plotFunctions():
                             plt.Line2D([0], [0], marker='_', color='blue', label='PTV', markerfacecolor="blue", markersize=20),
                             plt.Line2D([0], [0], marker='_', color="brown", label='Rectum', markerfacecolor="brown", markersize=20),
                             plt.Line2D([0], [0], marker='_', color="yellow", label='FemoralHeads', markerfacecolor="yellow", markersize=20)]
-                ax.legend(handles=legend_elements, loc='upper right')
+                ax.legend(handles=legend_elements, loc='upper right', fontsize=15)
 
         if showUncertainty:
             uncertaintyMapArrayNorm, cmapCTVUNC, normCTV = self.createCustomColormapPET(uncertaintyMapArray)
