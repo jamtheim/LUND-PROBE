@@ -69,14 +69,14 @@ uncertaintyMapRectumPath = os.path.join(subjectDir, MRIDir, nnUNetOutputDir, 'ma
 # Define paths for DL segmentations
 DLCTVPath = os.path.join(subjectDir, MRIDir, nnUNetOutputDir, 'mask_CTVT_427_nnUNet.nii.gz') 
 DLRectumPath = os.path.join(subjectDir, MRIDir, nnUNetOutputDir, 'mask_Rectum_nnUNet.nii.gz')
-# Define paths for some sample MRI structures
+# Define paths for some sample MRI segmentations
 MRICTVPath = os.path.join(subjectDir, MRIDir, 'mask_CTVT_427.nii.gz')
 MRIPTVPath = os.path.join(subjectDir, MRIDir, 'mask_PTVT_427.nii.gz')
 MRIRectumPath = os.path.join(subjectDir, MRIDir, 'mask_Rectum.nii.gz')
 MRIFemoralHeadLPath = os.path.join(subjectDir, MRIDir, 'mask_FemoralHead_L.nii.gz')
 MRIFemoralHeadRPath = os.path.join(subjectDir, MRIDir, 'mask_FemoralHead_R.nii.gz')
 MRIBladderPath = os.path.join(subjectDir, MRIDir, 'mask_Bladder.nii.gz')
-# Define paths for some sample sCT structures
+# Define paths for some sample sCT segmentations
 sCTCTVPath = os.path.join(subjectDir, sCTDir, 'mask_CTVT_427.nii.gz')
 sCTPTVPath = os.path.join(subjectDir, sCTDir, 'mask_PTVT_427.nii.gz')
 sCTRectumPath = os.path.join(subjectDir, sCTDir, 'mask_Rectum.nii.gz')
@@ -106,14 +106,14 @@ uncertainyyMapRectumImage = sitk.ReadImage(uncertaintyMapRectumPath)
 # DL segmentations
 DLCTVImage = sitk.ReadImage(DLCTVPath)
 DLRectumImage = sitk.ReadImage(DLRectumPath)
-# Structure volumes MRI
+# Segmentations volumes MRI
 MRICTVImage = sitk.ReadImage(MRICTVPath)
 MRIRectumImage = sitk.ReadImage(MRIRectumPath)
 MRIFemoralHeadLImage = sitk.ReadImage(MRIFemoralHeadLPath)
 MRIFemoralHeadRImage = sitk.ReadImage(MRIFemoralHeadRPath)
 MRIPTVImage = sitk.ReadImage(MRIPTVPath)
 MRIBladderImage = sitk.ReadImage(MRIBladderPath)
-# Structure volumes sCT 
+# Segmentations volumes sCT 
 sCTCTVImage = sitk.ReadImage(sCTCTVPath)
 sCTPTVImage = sitk.ReadImage(sCTPTVPath)
 sCTRectumImage = sitk.ReadImage(sCTRectumPath)
@@ -172,14 +172,14 @@ DLCTVArray = sitk.GetArrayFromImage(DLCTVImage)
 DLRectumArray = sitk.GetArrayFromImage(DLRectumImage)
 # Fiducial points
 fiducialArray = sitk.GetArrayFromImage(fiducialImage)
-# Structure volumes MRI
+# Segmentation volumes MRI
 MRICTVArray = sitk.GetArrayFromImage(MRICTVImage)
 MRIRectumArray = sitk.GetArrayFromImage(MRIRectumImage)
 MRIFemoralHeadLArray = sitk.GetArrayFromImage(MRIFemoralHeadLImage)
 MRIFemoralHeadRArray = sitk.GetArrayFromImage(MRIFemoralHeadRImage)
 MRIPTVArray = sitk.GetArrayFromImage(MRIPTVImage)
 MRIBladderArray = sitk.GetArrayFromImage(MRIBladderImage)
-# Structure volumes sCT
+# Segmentations volumes sCT
 sCTCTVArray = sitk.GetArrayFromImage(sCTCTVImage)
 sCTPTVArray = sitk.GetArrayFromImage(sCTPTVImage)
 sCTRectumArray = sitk.GetArrayFromImage(sCTRectumImage)
@@ -276,7 +276,7 @@ plt.show()
 
 
 ```python
-# Plot the MRI CTV structure for the middle slice
+# Plot the MRI CTV segmentation for the middle slice
 plt.imshow(MRICTVArray[middleSliceMRI, :, :], cmap='gray')
 plt.title('MRI CTV segmentation binary mask')
 plt.axis('off')
@@ -305,7 +305,7 @@ plotFunctions.plotData(MRIArray, showDosemap=False, showStructArrays=False, Titl
 
 
 ```python
-# Plot the MRI and the CTV structure
+# Plot the MRI and the CTV segmentation
 plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, showDosemap=False, showStructArrays=True, Title="MRI and CTV segmentation overlay", zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
@@ -317,7 +317,7 @@ plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, showDosemap=False, 
 
 
 ```python
-# Plot the MRI CTV structure with observer C and D in different colors
+# Plot the MRI CTV segmentation with observer C and D in different colors
 plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, MRICTVObsDImage=MRICTVObsCArray, MRICTVObsCImage=MRICTVObsDArray, showDosemap=False, showStructArrays=True, Title="MRI and CTV segmentation overlay together with obsC and obsD", zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
@@ -329,9 +329,9 @@ plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, MRICTVObsDImage=MRI
 
 
 ```python
-# Plot MRI with structures
+# Plot MRI with segmentations
 plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
-        structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, showStructArrays=True, Title="MRI with example structures", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
+        structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, showStructArrays=True, Title="MRI with example segmentations", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
 
@@ -366,9 +366,9 @@ plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDose
 
 
 ```python
-# Plot MRI with structures and dose overlay
+# Plot MRI with segmentations and dose overlay
 plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDosemap=True, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
-        structFemoralHeadRArray=MRIFemoralHeadRArray, showStructArrays=True, Title="MRI with example structures and dose overlay", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
+        structFemoralHeadRArray=MRIFemoralHeadRArray, showStructArrays=True, Title="MRI with example segmentations and dose overlay", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
 
@@ -403,9 +403,9 @@ plotFunctions.plotData(sCTArray,Title='sCT', ct=True)
 
 
 ```python
-# Plot original sCT with example structures 
+# Plot original sCT with example segmentations 
 plotFunctions.plotData(sCTArray, structCTVArray=sCTCTVArray, structRectumArray=sCTRectumArray, structPTVArray=sCTPTVArray, structFemoralHeadLArray=sCTFemoralHeadLArray, 
-        structFemoralHeadRArray=sCTFemoralHeadRArray, showDosemap=False, showStructArrays=True, Title="sCT with example structures", showLegend=True, ct=True)
+        structFemoralHeadRArray=sCTFemoralHeadRArray, showDosemap=False, showStructArrays=True, Title="sCT with example segmentations", showLegend=True, ct=True)
 ```
 
 
@@ -465,10 +465,10 @@ plotFunctions.plotData(sCTReg2MRIArray, doseMapArray=MRIDoseInterpolatedArray, s
 
 
 ```python
-# Plot sCT registered to MRI with structures 
-# Notice use of MRI structures for overlay
+# Plot sCT registered to MRI with segmentations 
+# Notice use of MRI segmentations for overlay
 plotFunctions.plotData(sCTReg2MRIArray, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
-        structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, ct=True, showStructArrays=True, Title="sCT registered to MRI with example structures", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
+        structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, ct=True, showStructArrays=True, Title="sCT registered to MRI with example segmentations", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
 
@@ -551,31 +551,31 @@ createPaperPlots = False
 
 
 ```python
-# FOR PAPER: Plot MRI with structures
+# FOR PAPER: Plot MRI with segmentations
 if createPaperPlots == True: 
         plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, structFiducialArray=fiducialArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
                 structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, showStructArrays=True, Title=None, showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200], slice_ax=42)
         # Save figure
-        plt.savefig('MRI_with_structures.png', dpi=300, bbox_inches='tight')
+        plt.savefig('MRI_with_segmentations.png', dpi=300, bbox_inches='tight')
 ```
 
 
 ```python
-# FOR PAPER: Plot sCT registered to MRI with structures 
-# Notice use of MRI structures for overlay
+# FOR PAPER: Plot sCT registered to MRI with segmentations 
+# Notice use of MRI segmentations for overlay
 if createPaperPlots == True: 
         plotFunctions.plotData(sCTReg2MRIArray, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
                 structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, ct=True, showStructArrays=True, Title=None, showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200], slice_ax=42)
         # Save figure
-        plt.savefig('sCT_registered_to_MRI_with_structures.png', dpi=300, bbox_inches='tight')
+        plt.savefig('sCT_registered_to_MRI_with_segmentations.png', dpi=300, bbox_inches='tight')
 ```
 
 
 ```python
-# FOR PAPER: Plot sCT registered to MRI with structures
+# FOR PAPER: Plot sCT registered to MRI with segmentations
 if createPaperPlots == True: 
         plotFunctions.plotData(sCTReg2MRIArray, doseMapArray=MRIDoseInterpolatedArray, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
                 structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=True, ct=True, showStructArrays=True, Title=None, showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200], slice_ax=42)
         # Save figure
-        plt.savefig('sCT_registered_to_MRI_with_structures_and_dose_overlay.png', dpi=300, bbox_inches='tight')
+        plt.savefig('sCT_registered_to_MRI_with_segmentations_and_dose_overlay.png', dpi=300, bbox_inches='tight')
 ```
