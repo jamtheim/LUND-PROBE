@@ -1,4 +1,4 @@
-<div style="background-color: grey; padding: 10px; border: 1px solid black; text-align: center;">
+<div style="background-color: white; padding: 10px; border: 1px solid black; text-align: center;">
     <img src="logo/LUND-Probe_Logo_and_Main_Text_and_Subtext.png" alt="Logo" style="max-width: 50%; height: auto;">
 </div>
 
@@ -355,7 +355,7 @@ plotFunctions.plotData(MRIArray, structFiducialArray=fiducialArray, slice_ax=37 
 
 ```python
 # Plot dose distribution on MRI
-plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDosemap=True, showStructArrays=False, Title='MRI with interpolated dose distribution (Gy)', ct=False, zooming=True, zoomingShape=[50, 960, 800, 200])
+plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDosemap=True, showStructArrays=False, Title='MRI with interpolated dose distribution', ct=False, zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
 
@@ -368,7 +368,7 @@ plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDose
 ```python
 # Plot MRI with structures and dose overlay
 plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDosemap=True, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
-        structFemoralHeadRArray=MRIFemoralHeadRArray, showStructArrays=True, Title="MRI with example structures and dose overlay (Gy)", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
+        structFemoralHeadRArray=MRIFemoralHeadRArray, showStructArrays=True, Title="MRI with example structures and dose overlay", showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
 
@@ -454,7 +454,7 @@ plotFunctions.plotMRIandsCT(MRIArray, sCTReg2MRIArray, Title='sCT registered to 
 # Plot registered sCT with dose overlay
 # Notice use of MRI geometry for dose overlay
 # Plot registered sCT with interpolated dose overlay
-plotFunctions.plotData(sCTReg2MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDosemap=True, showStructArrays=False, Title='sCT registered to MRI with dose overlay (Gy)', ct=True, zooming=True, zoomingShape=[50, 960, 800, 200])
+plotFunctions.plotData(sCTReg2MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDosemap=True, showStructArrays=False, Title='sCT registered to MRI with dose overlay', ct=True, zooming=True, zoomingShape=[50, 960, 800, 200])
 ```
 
 
@@ -542,3 +542,40 @@ plt.show()
 ![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_28_1.png)
     
 
+
+
+```python
+# Set flag for creating plots for the paper (True) or not (False)
+createPaperPlots = False
+```
+
+
+```python
+# FOR PAPER: Plot MRI with structures
+if createPaperPlots == True: 
+        plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, structFiducialArray=fiducialArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
+                structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, showStructArrays=True, Title=None, showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200], slice_ax=42)
+        # Save figure
+        plt.savefig('MRI_with_structures.png', dpi=300, bbox_inches='tight')
+```
+
+
+```python
+# FOR PAPER: Plot sCT registered to MRI with structures 
+# Notice use of MRI structures for overlay
+if createPaperPlots == True: 
+        plotFunctions.plotData(sCTReg2MRIArray, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
+                structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=False, ct=True, showStructArrays=True, Title=None, showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200], slice_ax=42)
+        # Save figure
+        plt.savefig('sCT_registered_to_MRI_with_structures.png', dpi=300, bbox_inches='tight')
+```
+
+
+```python
+# FOR PAPER: Plot sCT registered to MRI with structures
+if createPaperPlots == True: 
+        plotFunctions.plotData(sCTReg2MRIArray, doseMapArray=MRIDoseInterpolatedArray, structCTVArray=MRICTVArray, structRectumArray=MRIRectumArray, structPTVArray=MRIPTVArray, structFemoralHeadLArray=MRIFemoralHeadLArray, 
+                structFemoralHeadRArray=MRIFemoralHeadRArray, showDosemap=True, ct=True, showStructArrays=True, Title=None, showLegend=True, zooming=True, zoomingShape=[50, 960, 800, 200], slice_ax=42)
+        # Save figure
+        plt.savefig('sCT_registered_to_MRI_with_structures_and_dose_overlay.png', dpi=300, bbox_inches='tight')
+```

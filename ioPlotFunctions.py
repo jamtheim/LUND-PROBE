@@ -181,7 +181,7 @@ class plotFunctions():
             if structBladderArray is not None:
                 ax.contour(structBladderArray[slice_ax,:,:], levels=[0], origin="lower", linewidths=2, colors="yellow", zorder=1)
             if structFiducialArray is not None:
-                ax.contour(structFiducialArray[slice_ax,:,:], levels=[0], origin="lower", linewidths=2, colors="red", zorder=1)
+                ax.contour(structFiducialArray[slice_ax,:,:], levels=[0], origin="lower", linewidths=2, colors="black", zorder=1)
             if MRICTVObsDImage is not None:
                 ax.contour(MRICTVObsDImage[slice_ax,:,:], levels=[0], origin="lower", linewidths=2, colors="red", zorder=1)
             if MRICTVObsCImage is not None:
@@ -193,6 +193,10 @@ class plotFunctions():
                             plt.Line2D([0], [0], marker='_', color='blue', label='PTV', markerfacecolor="blue", markersize=20),
                             plt.Line2D([0], [0], marker='_', color="brown", label='Rectum', markerfacecolor="brown", markersize=20),
                             plt.Line2D([0], [0], marker='_', color="yellow", label='FemoralHeads', markerfacecolor="yellow", markersize=20)]
+                            # If fiducials are defined
+                if structFiducialArray is not None:
+                    legend_elements.append(plt.Line2D([0], [0], marker='_', color="black", label='Fiducials', markerfacecolor="black", markersize=20))
+                # Set
                 ax.legend(handles=legend_elements, loc='upper right', fontsize=15)
 
         if showUncertainty:
@@ -209,7 +213,7 @@ class plotFunctions():
             rounded_levels = [f"{math.ceil(level * 10) / 10:.1f}" for level in levels]
 
             cbar = plt.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=eclipse_cmap), ticks=levels, ax=ax, orientation='vertical')
-            cbar.set_label('Dose', fontsize=15, color='white')
+            cbar.set_label('Dose (Gy)', fontsize=15, color='white')
             cbar.set_ticklabels(rounded_levels, color="white", fontsize=9)
         if zooming:
             ax.axis(zoomingShape)
