@@ -1,5 +1,6 @@
-### LUND-PROBE – LUND Prostate Radiotherapy Open Benchmarking and Evaluation dataset
-#### Visualizing and using the LUND-PROBE dataset</small>
+<div style="background-color: grey; padding: 10px; border: 1px solid black; text-align: center;">
+    <img src="logo/LUND-Probe_Logo_and_Main_Text_and_Subtext.png" alt="Logo" style="max-width: 50%; height: auto;">
+</div>
 
 <small>Description:</small>
 <small>LUND-PROBE is a dataset, comprising clinical MRI- and synthetic CT (sCT) images in 3D NIfTI format, target and OARs segmentations, and radiotherapy dose distributions for 432 prostate cancer patients treated with MRI-based radiotherapy treatment planning. An extended part with 35 patients is also included, with the addition of deep learning (DL)-generated segmentations, DL segmentation uncertainty maps, and DL segmentations manually adjusted by four radiation oncologists.</small>
@@ -10,11 +11,7 @@ https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are
 <small> This dataset has also been used in the following publication: https://tobepublished</small>
 
 <div style="background-color: black; padding: 10px; border: 1px solid black; text-align: center;">
-    <img src="notebook_LUND-PROBE_files/notebook_LUND-PROBE_18_0.png" alt="Logo" style="max-width: 75%; height: auto;">
-</div>
-
-<div style="background-color: grey; padding: 10px; border: 1px solid black; text-align: center;">
-    <img src="logo/LUND-Probe_Logo_and_Main_Text_and_Subtext.png" alt="Logo" style="max-width: 50%; height: auto;">
+    <img src="logo/exampleData.png" alt="Logo" style="max-width: 75%; height: auto;">
 </div>
 
 
@@ -273,7 +270,7 @@ plt.show()
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_11_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_10_0.png)
     
 
 
@@ -288,7 +285,7 @@ plt.show()
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_12_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_11_0.png)
     
 
 
@@ -302,7 +299,7 @@ plotFunctions.plotData(MRIArray, showDosemap=False, showStructArrays=False, Titl
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_14_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_13_0.png)
     
 
 
@@ -314,7 +311,7 @@ plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, showDosemap=False, 
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_15_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_14_0.png)
     
 
 
@@ -326,7 +323,7 @@ plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, MRICTVObsDImage=MRI
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_16_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_15_0.png)
     
 
 
@@ -339,7 +336,7 @@ plotFunctions.plotData(MRIArray, structCTVArray=MRICTVArray, structRectumArray=M
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_17_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_16_0.png)
     
 
 
@@ -351,7 +348,7 @@ plotFunctions.plotData(MRIArray, structFiducialArray=fiducialArray, slice_ax=37 
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_18_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_17_0.png)
     
 
 
@@ -363,7 +360,7 @@ plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDose
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_19_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_18_0.png)
     
 
 
@@ -376,7 +373,7 @@ plotFunctions.plotData(MRIArray, doseMapArray=MRIDoseInterpolatedArray, showDose
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_20_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_19_0.png)
     
 
 
@@ -388,7 +385,7 @@ plotFunctions.plotData(MRIArray, uncertaintyMapArray=uncertaintyMapCTVArray, str
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_21_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_20_0.png)
     
 
 
@@ -400,7 +397,7 @@ plotFunctions.plotData(sCTArray,Title='sCT', ct=True)
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_22_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_21_0.png)
     
 
 
@@ -413,7 +410,7 @@ plotFunctions.plotData(sCTArray, structCTVArray=sCTCTVArray, structRectumArray=s
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_23_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_22_0.png)
     
 
 
@@ -425,7 +422,7 @@ plotFunctions.plotData(sCTArray, doseMapArray=sCTDoseInterpolatedArray, showDose
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_24_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_23_0.png)
     
 
 
@@ -437,7 +434,7 @@ plotFunctions.plotData(sCTReg2MRIArray, Title='sCT registered to MRI', ct=True, 
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_25_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_24_0.png)
     
 
 
@@ -448,7 +445,7 @@ plotFunctions.plotMRIandsCT(MRIArray, sCTReg2MRIArray, Title='sCT registered to 
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_26_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_25_0.png)
     
 
 
@@ -462,7 +459,7 @@ plotFunctions.plotData(sCTReg2MRIArray, doseMapArray=MRIDoseInterpolatedArray, s
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_27_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_26_0.png)
     
 
 
@@ -476,7 +473,7 @@ plotFunctions.plotData(sCTReg2MRIArray, structCTVArray=MRICTVArray, structRectum
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_28_0.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_27_0.png)
     
 
 
@@ -542,6 +539,6 @@ plt.show()
 
 
     
-![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_29_1.png)
+![png](notebook_LUND-PROBE_files/notebook_LUND-PROBE_28_1.png)
     
 
