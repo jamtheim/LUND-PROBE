@@ -14,6 +14,85 @@ https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are
     <img src="logo/exampleData.png" alt="Logo" style="max-width: 75%; height: auto;">
 </div>
 
+## Dataset Structure
+
+The LUND-PROBE dataset is organized with the following directory structure for each patient:
+
+```
+/Patient
+├── MR_StorT2
+│   ├── image.nii.gz
+│   ├── mask_MRI_T2_coords_fiducials.nii.gz
+│   ├── MRI_T2_DICOM_coords_fiducials.txt
+│   ├── dose_interpolated.nii.gz
+│   ├── mask_Bladder.nii.gz
+│   ├── mask_BODY.nii.gz
+│   ├── mask_CTVT_427.nii.gz
+│   ├── mask_FemoralHead_R.nii.gz
+│   ├── mask_FemoralHead_L.nii.gz
+│   ├── mask_Genitalia.nii.gz
+│   ├── mask_PenileBulb.nii.gz
+│   ├── mask_PTVT_427.nii.gz
+│   └── mask_Rectum.nii.gz
+│
+├── MR_StorT2
+│   └── nnUNetOutput
+│       ├── folds
+│       │   ├── mask_CTVT_427_nnUNet_fold_n.nii.gz
+│       │   └── mask_Rectum_nnUNet_fold_n.nii.gz
+│       ├── mask_CTVT_427_nnUNet.nii.gz
+│       ├── mask_CTVT_427_nnUNet_uncertaintyMap.nii.gz
+│       ├── mask_Rectum_nnUNet.nii.gz
+│       └── mask_Rectum_nnUNet_uncertaintyMap.nii.gz
+│
+├── MR_StorT2
+│   └── observerData
+│       ├── mask_CTVT_427_step1_obsN.nii.gz
+│       ├── mask_CTVT_427_step2_obsN.nii.gz
+│       ├── mask_Rectum_step1_obsN.nii.gz
+│       └── mask_Rectum_step2_obsN.nii.gz
+│
+└── sCT
+    ├── image.nii.gz
+    ├── image_reg2MRI.nii.gz
+    ├── dose_original.nii.gz
+    ├── dose_interpolated.nii.gz
+    ├── mask_Bladder.nii.gz
+    ├── mask_BODY.nii.gz
+    ├── mask_CTVT_427.nii.gz
+    ├── mask_FemoralHead_R.nii.gz
+    ├── mask_FemoralHead_L.nii.gz
+    ├── mask_Genitalia.nii.gz
+    ├── mask_PenileBulb.nii.gz
+    ├── mask_PTVT_427.nii.gz
+    └── mask_Rectum.nii.gz
+```
+
+### Directory Descriptions:
+
+- **MR_StorT2/**: Contains MRI T2-weighted images and related segmentation masks
+  - `image.nii.gz`: Primary MRI T2-weighted image
+  - `mask_*`: Various anatomical structure segmentation masks
+  - `dose_interpolated.nii.gz`: Dose distribution interpolated to MRI geometry
+  - `MRI_T2_DICOM_coords_fiducials.txt`: Fiducial marker coordinates in DICOM format
+
+- **MR_StorT2/nnUNetOutput/**: Deep learning generated segmentations and uncertainty maps
+  - `mask_*_nnUNet.nii.gz`: AI-generated segmentations
+  - `mask_*_nnUNet_uncertaintyMap.nii.gz`: Uncertainty maps for AI segmentations
+  - `folds/`: Cross-validation fold results
+
+- **MR_StorT2/observerData/**: Manual segmentations from multiple radiation oncologists
+  - `mask_*_step1_obsN.nii.gz`: Initial observer segmentations (N = observer ID)
+  - `mask_*_step2_obsN.nii.gz`: Adjusted observer segmentations
+
+- **sCT/**: Synthetic CT images and related data
+  - `image.nii.gz`: Synthetic CT image
+  - `image_reg2MRI.nii.gz`: Synthetic CT registered to MRI space
+  - `dose_original.nii.gz`: Original dose distribution
+  - `dose_interpolated.nii.gz`: Dose distribution interpolated to sCT geometry
+  - `mask_*`: Segmentation masks corresponding to sCT images
+
+## Code Examples
 
 ```python
 # *********************************************************************************
