@@ -7,8 +7,8 @@
 
 <small>This notebook provides sample code for loading and visualizing the LUND-PROBE data. Follow along and feel free to modify the examples to suit your specific use case! Instructions on how to access the data is found at the AIDA Data Hub:
 https://datahub.aida.scilifelab.se/10.23698/aida/lund-probe and data details are found in the file ["Data_table.pdf"](https://github.com/jamtheim/LUND-PROBE/blob/main/Data_table.pdf). </small>
-<small> Publication where the LUND-PROBE dataset data is described is found at [https://arxiv.org/abs/2502.04493.](https://arxiv.org/abs/2502.04493) </small>
-<small> This dataset has also been used in the following publication: [https://arxiv.org/abs/2502.18973.](https://arxiv.org/abs/2502.18973) </small> 
+<small> Publication where the LUND-PROBE dataset data is described is found at [https://www.nature.com/articles/s41597-025-04954-5](https://www.nature.com/articles/s41597-025-04954-5) </small>
+<small> This dataset has also been used in the following publication: [https://aapm.onlinelibrary.wiley.com/doi/10.1002/acm2.70221.](https://aapm.onlinelibrary.wiley.com/doi/10.1002/acm2.70221) </small> 
 
 <div style="background-color: black; padding: 10px; border: 1px solid black; text-align: center;">
     <img src="logo/exampleData.png" alt="Logo" style="max-width: 75%; height: auto;">
